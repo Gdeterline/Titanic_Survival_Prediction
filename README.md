@@ -1,16 +1,20 @@
 # Titanic Survival Prediction
 
+**Welcome to my Titanic Survival Prediction personnal data science project!** This README file contains information/documentation about what is done in the main.ipynb file. The latter is documented and contains plots, tables, etc. so it should be easily readable.
+
 ## Table of Contents
 
 1. [Introduction](#introduction)
+
+2. [Ressources](#ressources)
    
-2. [Data Preparation and Analysis](#data_analysis)
+3. [Data Preparation and Analysis](#data_analysis)
    
     a. [EDA - Exploratory Data Analysis](#eda)
    
     b. [Data Cleaning and Preprocessing](#data_cleaning)
    
-3. [Theoretical Model Selection](#model_selection)
+4. [Theoretical Model Selection](#model_selection)
    
     a. [First step: What is the type of output?](#step1)
    
@@ -18,7 +22,7 @@
    
     c. [Third step: Training time](#step3)
 
-4. [Prediction Models](#prediction_models)
+5. [Prediction Models](#prediction_models)
 
    a. [Logistic Regression](#logistic_regression)
    
@@ -76,11 +80,15 @@
          
       2. [Evaluation Metrics](#gb_evaluation_metrics)
   
-5. [Conclusion & Thougts](#conclusion)
+6. [Conclusion & Thougts](#conclusion)
+
+
 
 ## 1. Introduction <a name="introduction"></a>
 
-This project aims at gaining skills on data cleaning, data analysis, model selection, and model building/tuning.
+**Motivation of the project:** I am really passionate about data and how to get the best out of it. And what is better than seeing what the data means today, and perhaps what it could lead to tomorrow? Data tells a story, that asks nothing else than to be continued! So how about we make prediction models to make the data talk? That is what I want to do.
+Therefore, this project aims at gaining skills on data cleaning, data analysis, model selection, and model building/tuning.
+
 
 This project is about the Titanic Survival Rates of a person, given some features. The main objective is to build a well selected model that shall predict which of the Titanic passengers survived, based on their age, gender, passenger class, number of children/siblings/parents onboard, etc.
 
@@ -89,7 +97,20 @@ The project uses two Kaggle datasets, _train_ and _test_. Train is meant to buil
 The **main.ipynb** notebook file contains the source code, as well as some documentation, both theoretical and practical, on the steps used/useful to lead a data science project.
 The data analysis plots are available in the data_analysis_plots folder.
 
-## 2. Data Preparation and Analysis <a name="data_analysis"></a>
+## 2. Ressources <a name="ressources"></a>
+
+This project uses several tools/libraries that are required to doing data science. This was the perfect occasion to learn/master them. Here they are listed:
+- pandas
+- numpy
+- matplotlib
+- seaborn
+- scikit-learn
+
+
+
+
+
+## 3. Data Preparation and Analysis <a name="data_analysis"></a>
 
 The aim here is to explore the data:
 - What features seem the most important? Which of them seem correlated?
@@ -111,7 +132,7 @@ This also means labeling the data if it is not. By having a look at the _train_ 
 
 2.  Data Preprocessing: Here, we want to prepare the data so that it is easily usable by the model. This can mean doing some feature engineering (create new features from existing features) as well as converting String features to Integers/Floats so that the model can read them. You also want to divide the _train_ dataset into two separate datasets: one to train the model, one to validate it on a test subset. It several cases, it can be useful to shuffle the dataset before doing so, in order to properly evaluate the model performance.
 
-## 3. Model Selection <a name="model_selection"></a>
+## 4. Model Selection <a name="model_selection"></a>
 
 Theoretically, the next step would now be to choose the right prediction model for our project. Let's explain the different aspects to bear in mind when choosing a model. 
 
@@ -141,7 +162,7 @@ Consider the time you can allocate to the training of the model: if you need fas
 
 <ins>Nota bene:</ins> For what is following, in every case we should do some hyperparameter tuning and some cross-validation. We will do these in only a few cases. Indeed for Logistic Regression for instance, hyperparameter tuning isn't as important as it can be for Random Forest or Decision trees.
 
-## 4. Prediction models <a name="prediction_models"></a>
+## 5. Prediction models <a name="prediction_models"></a>
 
 ### a. Logistic Regression <a name="logistic_regression"></a>
 
@@ -193,6 +214,8 @@ Consider the time you can allocate to the training of the model: if you need fas
 
 ### g. Neural Networks <a name="neural_networks"></a>
 
+Okay, this may not be the most logical thing to do now -gradient boosting, naive Bayes, should probably be done first- but I was working on building a Neural Network from scratch in parallel so I really wanted to do some neural network model prediction ^^
+
 #### 1. Model Training <a name="nn_model_training"></a>
 
 #### 2. Evaluation Metrics <a name="nn_evaluation_metrics"></a>
@@ -212,4 +235,8 @@ Consider the time you can allocate to the training of the model: if you need fas
 #### 1. Model Training <a name="gb_model_training"></a>
 
 #### 2. Evaluation Metrics <a name="gb_evaluation_metrics"></a>
+
+
+
+### 6. Conclusion & Thougts <a name="conclusion"></a>
 
