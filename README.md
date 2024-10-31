@@ -204,14 +204,14 @@ There are of course other useful metrics, but let's keep some fun for what comes
 - **Output Type**: Predicts the class of a data point based on the classes of its nearest neighbors.
 - **Use Case**: Used for classification in our case.
 - **Parameters**: 
- - **k**: The number of nearest neighbors to consider.
- - **Distance Metric**: Euclidean distance is sufficient in our case. Could be another distance.
+   - **k**: The number of nearest neighbors to consider.
+   - **Distance Metric**: Euclidean distance is sufficient in our case. Could be another distance.
 - **Model Output**: For classification, assigns the most common class among the k nearest neighbors.
 - **Model Characteristics**:
- - **Non-parametric**: Does not assume any specific form for the data distribution.
- - **Instance-based**: Stores all training data and makes predictions based on them directly, which can be computationally expensive.
+   - **Non-parametric**: Does not assume any specific form for the data distribution.
+   - **Instance-based**: Stores all training data and makes predictions based on them directly, which can be computationally expensive.
 - **Sensitivity to Data**: Performance depends heavily on:
- - **Value of k**: A small k can lead to noise sensitivity, while a large k may result in oversmoothing.
+   - **Value of k**: A small k can lead to noise sensitivity, while a large k may result in oversmoothing.
 
 Based on the theory, we train the model provided by scikit-learn **sklearn.neighbors.KNeighborsClassifier()** on the training subset of the _train_ dataset. 
 
