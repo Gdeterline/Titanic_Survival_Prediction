@@ -6,12 +6,15 @@
 2. [Data Preparation and Analysis](#data_analysis)
    
     a. [EDA - Exploratory Data Analysis](#eda)
+   
     b. [Data Cleaning and Preprocessing](#data_cleaning)
    
-3. [Model Selection](#model_selection)
+4. [Model Selection](#model_selection)
    
     a. [First step: What is the type of output?](#step1)
+   
     b. [Second step: Abide by the data](#step2)
+   
     c. [Third step: Training time](#step3)
 
 
