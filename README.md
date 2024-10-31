@@ -3,13 +3,14 @@
 ## Table of Contents
 
 1. [Introduction](#introduction)
+   
 2. [Data Preparation and Analysis](#data_analysis)
    
     a. [EDA - Exploratory Data Analysis](#eda)
    
     b. [Data Cleaning and Preprocessing](#data_cleaning)
    
-4. [Model Selection](#model_selection)
+3. [Theoretical Model Selection](#model_selection)
    
     a. [First step: What is the type of output?](#step1)
    
@@ -17,6 +18,63 @@
    
     c. [Third step: Training time](#step3)
 
+4. [Prediction Models](#prediction_models)
+
+   a. [Logistic Regression](#logistic_regression)
+   
+      1. [Model Training](#lr_model_training)
+         
+      2. [Evaluation Metrics](#lr_evaluation_metrics)
+
+   b. [K-nearest neighbors](#knn)
+
+      1. [Model Training](#knn_model_training)
+         
+      2. [Evaluation Metrics](#knn_evaluation_metrics)
+
+   c. [K-means](#kmeans)
+
+      1. [Model Training](#km_model_training)
+         
+      2. [Evaluation Metrics](#km_evaluation_metrics)
+
+   d. [Decision trees](#decision_trees)
+
+      1. [Model Training](#dt_model_training)
+         
+      2. [Evaluation Metrics](#dt_evaluation_metrics)
+
+   e. [Random Forest](#random_forest)
+
+      1. [Model Training](#rf_model_training)
+         
+      2. [Evaluation Metrics](#rf_evaluation_metrics)
+  
+      3. [Hyperparameters tuning and cross validation](#rf_tuning_cv)
+  
+   f. [SVM - Support-vector machines](#svm)
+         
+      1. [Model Training](#rf_model_training)
+         
+      2. [Evaluation Metrics](#rf_evaluation_metrics)
+  
+   g. [Neural Networks](#neural_networks)
+
+      1. [Model Training](#rf_model_training)
+         
+      2. [Evaluation Metrics](#rf_evaluation_metrics)
+  
+   h. [Naive Bayes](#naive_bayes)
+
+      1. [Model Training](#rf_model_training)
+         
+      2. [Evaluation Metrics](#rf_evaluation_metrics)
+  
+   i. [Gradient Boosting](#gradient_boosting)
+
+      1. [Model Training](#rf_model_training)
+         
+      2. [Evaluation Metrics](#rf_evaluation_metrics)
 
 ## 1. Introduction <a name="introduction"></a>
 
@@ -49,11 +107,11 @@ There are two main compenents here:
 1. Data Cleaning: Here, we want to determine the proportion of empty fields/values per feature. And within each feature, we want to know which fields are missing. Fortunately _pandas_' library provides the functions to do so. Once the missing values are identified, we can choose a strategy to tackle the issue - Dropping missing rows, filling them with the mean value for that feature, etc.
 This also means labeling the data if it is not. By having a look at the _train_ dataset, this shouldn't be an issue.
 
-2.  Data Preprocessing: Here, we want to prepare the data so that it is easily usable by the model. This can mean doing some feature engineering (create new features from existing features) as well as converting String features to Integers/Floats so that the model can read them.
+2.  Data Preprocessing: Here, we want to prepare the data so that it is easily usable by the model. This can mean doing some feature engineering (create new features from existing features) as well as converting String features to Integers/Floats so that the model can read them. You also want to divide the _train_ dataset into two separate datasets: one to train the model, one to validate it on a test subset. It several cases, it can be useful to shuffle the dataset before doing so, in order to properly evaluate the model performance.
 
 ## 3. Model Selection <a name="model_selection"></a>
 
-Theoretically, the next step would now be to choose the right prediction model for our project. I'll explain the different aspects to bear in mind when choosing a model. But for this project, since the idea is to gain skills in data science, we will go through several different prediction models that apply here.
+Theoretically, the next step would now be to choose the right prediction model for our project. Let's explain the different aspects to bear in mind when choosing a model. 
 
 #### a. **First step:** What is the type of output? <a name="step1"></a>
 
@@ -76,6 +134,14 @@ Choose a model adapted to the linearity of your project. Linear models won't be 
 #### c. **Third step:** Training time <a name="step3"></a>
 
 Consider the time you can allocate to the training of the model: if you need fast results, you'll probably choose a quicker model -regression among others- but with lower quality results. If you have time, you can choose to spend time on the data preprocessing, training, etc. and expect high accuracy for your model predictions.
+
+**For this project, since the idea is to gain skills in data science, and therefore increase my knwoledge on different prediction models, we will go through several different prediction models that apply here.**
+
+<ins>Nota bene:</ins> For what is following, in every case we should do some hyperparameter tuning and some cross-validation. We will do these in only a few cases. Indeed for Logistic Regression for instance, hyperparameter tuning isn't as important as it can be for Random Forest or Decision trees.
+
+## 4. Prediction models <a name="prediction_models"></a>
+
+### a. Logistic Regression <a name="logistic_regression"></a>
 
 
 
