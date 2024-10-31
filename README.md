@@ -189,7 +189,7 @@ There are several interesting metrics to evaluate the model performance:
 - **Confusion Matrix:** it is a table with two rows and two columns (since our problem is binary) that reports the number of true positives, false negatives, false positives, and true negatives. This matrix allows us to calculate:
    - **Precision:** The number of True Positives divided by the number of True Positives and False Positives. It is the ability of the classifier not to label as positive a sample that is negative.
 
-                                    $Precision = \frac{TP}{TP + FP}$
+                                    $$Precision = \frac{TP}{TP + FP}$$
   
    - **Recall:** The number of True Positives divided by the number of True Positives and the number of False Negatives. It is the ability of the classifier to find all the positive samples.
  
