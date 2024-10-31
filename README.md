@@ -171,7 +171,7 @@ Consider the time you can allocate to the training of the model: if you need fas
 **Logistic Regression Characteristics:**
 - **Output Type**: Predicts probabilities between 0 and 1
 - **Use Case**: Used for classification problems. Ideal for binary problems
-- **Equation Form**: $p = 1 / (1 + exp(-(β0 + β1*x1 + ... + βn*xn)))$
+- **Equation Form**: $$'p = \frac{1}{1 + e^(-(β_0 + β_1*x_1 + ... + β_n*x_n))}'$$
 - **Model Output**: Outputs a probability, then converts it to a class (0 or 1)
 - **Range of Predictions**: Outputs values between 0 and 1 (probabilities).
 
