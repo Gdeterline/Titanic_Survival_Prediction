@@ -175,7 +175,7 @@ Consider the time you can allocate to the training of the model: if you need fas
 - **Model Output**: Outputs a probability, then converts it to a class (0 or 1)
 - **Range of Predictions**: Outputs values between 0 and 1 (probabilities).
 
-Based on the theory, we train the model provided by scikit-learn -**sklearn.linear_model.LogisticRegression()**- on the training subset of the _train_ dataset. 
+Based on the theory, we train the model provided by scikit-learn **sklearn.linear_model.LogisticRegression()** on the training subset of the _train_ dataset. 
 The model has been trained twice:
 - First with a single feature, to test out the model and see how things work. The results aren't expected to be very good.
 - Then on the several relevant features, to have a complete model. Of course, this is the model we choose to keep.
@@ -199,6 +199,21 @@ There are of course other useful metrics, but let's keep some fun for what comes
 ### b. K-nearest neighbors <a name="knn"></a>
 
 #### i. Model Training <a name="knn_model_training"></a>
+
+ **K-Nearest Neighbors (KNN) Characteristics:**
+- **Output Type**: Predicts the class of a data point based on the classes of its nearest neighbors.
+- **Use Case**: Used for classification in our case.
+- **Parameters**: 
+ - **k**: The number of nearest neighbors to consider.
+ - **Distance Metric**: Euclidean distance is sufficient in our case. Could be another distance.
+- **Model Output**: For classification, assigns the most common class among the k nearest neighbors.
+- **Model Characteristics**:
+ - **Non-parametric**: Does not assume any specific form for the data distribution.
+ - **Instance-based**: Stores all training data and makes predictions based on them directly, which can be computationally expensive.
+- **Sensitivity to Data**: Performance depends heavily on:
+ - **Value of k**: A small k can lead to noise sensitivity, while a large k may result in oversmoothing.
+
+Based on the theory, we train the model provided by scikit-learn **sklearn.neighbors.KNeighborsClassifier()** on the training subset of the _train_ dataset. 
 
 #### ii. Evaluation Metrics <a name="knn_evaluation_metrics"></a>
 
