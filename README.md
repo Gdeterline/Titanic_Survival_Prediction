@@ -54,27 +54,29 @@
   
    f. [SVM - Support-vector machines](#svm)
          
-      1. [Model Training](#rf_model_training)
+      1. [Model Training](#svm_model_training)
          
-      2. [Evaluation Metrics](#rf_evaluation_metrics)
+      2. [Evaluation Metrics](#svm_evaluation_metrics)
   
    g. [Neural Networks](#neural_networks)
 
-      1. [Model Training](#rf_model_training)
+      1. [Model Training](#nn_model_training)
          
-      2. [Evaluation Metrics](#rf_evaluation_metrics)
+      2. [Evaluation Metrics](#nn_evaluation_metrics)
   
    h. [Naive Bayes](#naive_bayes)
 
-      1. [Model Training](#rf_model_training)
+      1. [Model Training](#nb_model_training)
          
-      2. [Evaluation Metrics](#rf_evaluation_metrics)
+      2. [Evaluation Metrics](#nb_evaluation_metrics)
   
    i. [Gradient Boosting](#gradient_boosting)
 
-      1. [Model Training](#rf_model_training)
+      1. [Model Training](#gb_model_training)
          
-      2. [Evaluation Metrics](#rf_evaluation_metrics)
+      2. [Evaluation Metrics](#gb_evaluation_metrics)
+  
+5. [Conclusion & Thougts](#conclusion)
 
 ## 1. Introduction <a name="introduction"></a>
 
@@ -143,5 +145,71 @@ Consider the time you can allocate to the training of the model: if you need fas
 
 ### a. Logistic Regression <a name="logistic_regression"></a>
 
+#### 1. Model Training <a name="lr_model_training"></a>
 
+#### 2. Evaluation Metrics <a name="lr_evaluation_metrics"></a>
+
+
+
+### b. K-nearest neighbors <a name="knn"></a>
+
+#### 1. Model Training <a name="knn_model_training"></a>
+
+#### 2. Evaluation Metrics <a name="knn_evaluation_metrics"></a>
+
+
+
+### c. K-means <a name="kmeans"></a>
+
+#### 1. Model Training <a name="km_model_training"></a>
+
+#### 2. Evaluation Metrics <a name="km_evaluation_metrics"></a>
+
+
+
+### d. Decision trees <a name="decision_trees"></a>
+
+#### 1. Model Training <a name="dt_model_training"></a>
+
+#### 2. Evaluation Metrics <a name="dt_evaluation_metrics"></a>
+
+
+
+### e. Random Forest <a name="random_forest"></a>
+
+#### 1. Model Training <a name="rf_model_training"></a>
+
+#### 2. Evaluation Metrics <a name="rf_evaluation_metrics"></a>
+
+
+
+### f. SVM - Support-vector machines <a name="svm"></a>
+
+#### 1. Model Training <a name="svm_model_training"></a>
+
+#### 2. Evaluation Metrics <a name="svm_evaluation_metrics"></a>
+
+
+
+### g. Neural Networks <a name="neural_networks"></a>
+
+#### 1. Model Training <a name="nn_model_training"></a>
+
+#### 2. Evaluation Metrics <a name="nn_evaluation_metrics"></a>
+
+
+
+### h. Naive Bayes <a name="naive_bayes"></a>
+
+#### 1. Model Training <a name="nb_model_training"></a>
+
+#### 2. Evaluation Metrics <a name="nb_evaluation_metrics"></a>
+
+
+
+### i. Gradient Boosting <a name="gradient_boosting"></a>
+
+#### 1. Model Training <a name="gb_model_training"></a>
+
+#### 2. Evaluation Metrics <a name="gb_evaluation_metrics"></a>
 
