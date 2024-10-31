@@ -175,9 +175,26 @@ Consider the time you can allocate to the training of the model: if you need fas
 - **Model Output**: Outputs a probability, then converts it to a class (0 or 1)
 - **Range of Predictions**: Outputs values between 0 and 1 (probabilities).
 
+Based on the theory, we train the model provided by scikit-learn -**sklearn.linear_model.LogisticRegression()**- on the training subset of the _train_ dataset. 
+The model has been trained twice:
+- First with a single feature, to test out the model and see how things work. The results aren't expected to be very good.
+- Then on the several relevant features, to have a complete model. Of course, this is the model we choose to keep.
+
 #### ii. Evaluation Metrics <a name="lr_evaluation_metrics"></a>
 
+Once we are done, we are able to test the model on the test subset.
+The accuracy scores for the training and testing subsets can be found in the main.ipynb file. The analysis of the performance too -under/overfitting.
 
+There are several interesting metrics to evaluate the model performance:
+- **Confusion Matrix:** it is a table with two rows and two columns (since our problem is binary) that reports the number of true positives, false negatives, false positives, and true negatives. This matrix allows us to calculate:
+   - **Precision:** The number of True Positives divided by the number of True Positives and False Positives. It is the ability of the classifier not to label as positive a sample that is negative.
+   - **Recall:** The number of True Positives divided by the number of True Positives and the number of False Negatives. It is the ability of the classifier to find all the positive samples.
+   - **F1 Score:** The weighted average of Precision and Recall. It takes both false positives and false negatives into account. It is the harmonic mean of the precision and recall.
+
+- **AUC-ROC (Area under the Receiver Operating Characteristic Curve):** The ROC curve is the plot of the true positive rate (TPR) against the false positive rate (FPR) at each threshold setting.
+
+All the figures can be found in the main file, as well as an analysis for them all.
+There are of course other useful metrics, but let's keep some fun for what comes next! ^^
 
 ### b. K-nearest neighbors <a name="knn"></a>
 
