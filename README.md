@@ -19,11 +19,24 @@ The project uses two Kaggle datasets, _train_ and _test_. Train is meant to buil
 The **main.ipynb** notebook file contains the source code, as well as some documentation, both theoretical and practical, on the steps used/useful to lead a data science project.
 The data analysis plots are available in the data_analysis_plots folder.
 
-## Some paragraph <a name="paragraph1"></a>
-The first paragraph text
+## Data Preparation and Analysis <a name="paragraph1"></a>
 
-### Sub paragraph <a name="subparagraph1"></a>
-This is a sub paragraph, formatted in heading 3 style
+The aim here is to explore the data:
+- What features seem the most important? Which of them seem correlated?
+- Are there any missing values? If there are -Spoiler Alert: there are some!- how do we handle them?
+- Do we need to prepare the data?
+
+The data must be clean/structured to work on, for the model to predict better. 
+
+### EDA - Exploratory Data Analysis <a name="subparagraph1"></a>
+
+The EDA step is meant to understand the data. It is meant to identify the useful information provided by the data, understand the data, and evaluate if the are links between the different features.
+This can also provide us with some intuition on how the predictions should go - though intuition isn't always right. Sadly, we get the intuition that a 100 years old male passenger in 3rd class won't be classified as survived. Does the data seem to go in that sense? Plots can be useful to determine that.
+
+
+### Data Cleaning and Preprocessing <a name="subparagraph2"></a>
+
+
 
 ## Another paragraph <a name="paragraph2"></a>
 The second paragraph text
