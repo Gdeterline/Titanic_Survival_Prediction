@@ -38,12 +38,12 @@ The aim here is to explore the data:
 
 The data must be clean/structured to work on, for the model to predict better. 
 
-### a. EDA - Exploratory Data Analysis <a name="eda"></a>
+#### a. EDA - Exploratory Data Analysis <a name="eda"></a>
 
 The EDA step is meant to understand the data. It is meant to identify the useful information provided by the data, understand the data, and evaluate if the are links between the different features.
 This can also provide us with some intuition on how the predictions should go - though intuition isn't always right. Sadly, we get the intuition that a 100 years old male passenger in 3rd class won't be classified as survived. Does the data seem to go in that sense? Plots (heatmaps, countplots, etc.) can be useful to determine that. You can find the different plots in the [data_analysis_plots](https://github.com/Gdeterline/Titanic_Survival_Prediction/tree/aaf7590bbfc4bdf2ee6ed5dac0e31c8a516f9290/data_analysis_plots) folder.
 
-### b. Data Cleaning and Preprocessing <a name="data_cleaning"></a>
+#### b. Data Cleaning and Preprocessing <a name="data_cleaning"></a>
 
 There are two main compenents here:
 1. Data Cleaning: Here, we want to determine the proportion of empty fields/values per feature. And within each feature, we want to know which fields are missing. Fortunately _pandas_' library provides the functions to do so. Once the missing values are identified, we can choose a strategy to tackle the issue - Dropping missing rows, filling them with the mean value for that feature, etc.
