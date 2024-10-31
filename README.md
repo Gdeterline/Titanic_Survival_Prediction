@@ -197,7 +197,7 @@ There are several interesting metrics to evaluate the model performance:
 
    - **F1 Score:** The weighted average of Precision and Recall. It takes both false positives and false negatives into account. It is the harmonic mean of the precision and recall.
  
-                                    $F1 Score = \frac{2*Precision*Recall}{Precision + Recall}$
+                                    $F1\ Score = \frac{2 \cdot Precision \cdot Recall}{Precision + Recall}$
      
 
 - **AUC-ROC (Area under the Receiver Operating Characteristic Curve):** The ROC curve is the plot of the true positive rate (TPR) against the false positive rate (FPR) at each threshold setting.
