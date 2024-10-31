@@ -166,49 +166,56 @@ Consider the time you can allocate to the training of the model: if you need fas
 
 ### a. Logistic Regression <a name="logistic_regression"></a>
 
-#### 1. Model Training <a name="lr_model_training"></a>
+#### i. Model Training <a name="lr_model_training"></a>
 
-#### 2. Evaluation Metrics <a name="lr_evaluation_metrics"></a>
+**Logistic Regression Characteristics:**
+- **Output Type**: Predicts probabilities between 0 and 1
+- **Use Case**: Used for classification problems. Ideal for binary problems
+- **Equation Form**: $p = 1 / (1 + exp(-(β0 + β1*x1 + ... + βn*xn)))$
+- **Model Output**: Outputs a probability, then converts it to a class (0 or 1)
+- **Range of Predictions**: Outputs values between 0 and 1 (probabilities).
+
+#### ii. Evaluation Metrics <a name="lr_evaluation_metrics"></a>
 
 
 
 ### b. K-nearest neighbors <a name="knn"></a>
 
-#### 1. Model Training <a name="knn_model_training"></a>
+#### i. Model Training <a name="knn_model_training"></a>
 
-#### 2. Evaluation Metrics <a name="knn_evaluation_metrics"></a>
+#### ii. Evaluation Metrics <a name="knn_evaluation_metrics"></a>
 
 
 
 ### c. K-means <a name="kmeans"></a>
 
-#### 1. Model Training <a name="km_model_training"></a>
+#### i. Model Training <a name="km_model_training"></a>
 
-#### 2. Evaluation Metrics <a name="km_evaluation_metrics"></a>
+#### ii. Evaluation Metrics <a name="km_evaluation_metrics"></a>
 
 
 
 ### d. Decision trees <a name="decision_trees"></a>
 
-#### 1. Model Training <a name="dt_model_training"></a>
+#### i. Model Training <a name="dt_model_training"></a>
 
-#### 2. Evaluation Metrics <a name="dt_evaluation_metrics"></a>
+#### ii. Evaluation Metrics <a name="dt_evaluation_metrics"></a>
 
 
 
 ### e. Random Forest <a name="random_forest"></a>
 
-#### 1. Model Training <a name="rf_model_training"></a>
+#### i. Model Training <a name="rf_model_training"></a>
 
-#### 2. Evaluation Metrics <a name="rf_evaluation_metrics"></a>
+#### ii. Evaluation Metrics <a name="rf_evaluation_metrics"></a>
 
 
 
 ### f. SVM - Support-vector machines <a name="svm"></a>
 
-#### 1. Model Training <a name="svm_model_training"></a>
+#### i. Model Training <a name="svm_model_training"></a>
 
-#### 2. Evaluation Metrics <a name="svm_evaluation_metrics"></a>
+#### ii. Evaluation Metrics <a name="svm_evaluation_metrics"></a>
 
 
 
@@ -216,25 +223,25 @@ Consider the time you can allocate to the training of the model: if you need fas
 
 Okay, this may not be the most logical thing to do now -gradient boosting, naive Bayes, should probably be done first- but I was working on building a Neural Network from scratch in parallel so I really wanted to do some neural network model prediction ^^
 
-#### 1. Model Training <a name="nn_model_training"></a>
+#### i. Model Training <a name="nn_model_training"></a>
 
-#### 2. Evaluation Metrics <a name="nn_evaluation_metrics"></a>
+#### ii. Evaluation Metrics <a name="nn_evaluation_metrics"></a>
 
 
 
 ### h. Naive Bayes <a name="naive_bayes"></a>
 
-#### 1. Model Training <a name="nb_model_training"></a>
+#### i. Model Training <a name="nb_model_training"></a>
 
-#### 2. Evaluation Metrics <a name="nb_evaluation_metrics"></a>
+#### ii. Evaluation Metrics <a name="nb_evaluation_metrics"></a>
 
 
 
 ### i. Gradient Boosting <a name="gradient_boosting"></a>
 
-#### 1. Model Training <a name="gb_model_training"></a>
+#### i. Model Training <a name="gb_model_training"></a>
 
-#### 2. Evaluation Metrics <a name="gb_evaluation_metrics"></a>
+#### ii. Evaluation Metrics <a name="gb_evaluation_metrics"></a>
 
 
 
