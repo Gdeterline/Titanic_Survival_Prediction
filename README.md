@@ -253,9 +253,12 @@ Based on the theory, we train the model provided by scikit-learn **sklearn.neigh
 
 ### g. Neural Networks <a name="neural_networks"></a>
 
-Okay, this may not be the most logical thing to do now -gradient boosting, naive Bayes, should probably be done first- but I was working on building a Neural Network from scratch in parallel so I really wanted to do some neural network model prediction ^^
+Okay, this may not be the most logical thing to do now -gradient boosting, naive Bayes, should probably be done first- 
+but I was working on building a Neural Network from scratch in parallel so I really wanted to do some neural network model prediction ^^
 
 #### i. Model Training <a name="nn_model_training"></a>
+
+
 
 #### ii. Evaluation Metrics <a name="nn_evaluation_metrics"></a>
 
@@ -264,6 +267,14 @@ Okay, this may not be the most logical thing to do now -gradient boosting, naive
 ### h. Naive Bayes <a name="naive_bayes"></a>
 
 #### i. Model Training <a name="nb_model_training"></a>
+
+##### Testing out the neural network buit in the [Building a neural network from scratch project](#https://github.com/Gdeterline/Neural-Network-Build)
+
+
+
+
+
+#####
 
 #### ii. Evaluation Metrics <a name="nb_evaluation_metrics"></a>
 
