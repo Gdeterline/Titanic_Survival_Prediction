@@ -22,64 +22,26 @@
    
     c. [Third step: Training time](#step3)
 
-5. [Prediction Models](#prediction_models)
+5. [Training and Testing](#training_and_testing)
+
+6. [Prediction Models](#prediction_models)
 
    a. [Logistic Regression](#logistic_regression)
-   
-      1. [Model Training](#lr_model_training)
-         
-      2. [Evaluation Metrics](#lr_evaluation_metrics)
 
    b. [K-nearest neighbors](#knn)
 
-      1. [Model Training](#knn_model_training)
-         
-      2. [Evaluation Metrics](#knn_evaluation_metrics)
+   c. [Decision trees](#decision_trees)
 
-   c. [K-means](#kmeans)
-
-      1. [Model Training](#km_model_training)
-         
-      2. [Evaluation Metrics](#km_evaluation_metrics)
-
-   d. [Decision trees](#decision_trees)
-
-      1. [Model Training](#dt_model_training)
-         
-      2. [Evaluation Metrics](#dt_evaluation_metrics)
-
-   e. [Random Forest](#random_forest)
-
-      1. [Model Training](#rf_model_training)
-         
-      2. [Evaluation Metrics](#rf_evaluation_metrics)
+   d. [Random Forest](#random_forest)
   
-      3. [Hyperparameters tuning and cross validation](#rf_tuning_cv)
+   e. [SVM - Support-vector machines](#svm)
   
-   f. [SVM - Support-vector machines](#svm)
-         
-      1. [Model Training](#svm_model_training)
-         
-      2. [Evaluation Metrics](#svm_evaluation_metrics)
-  
-   g. [Neural Networks](#neural_networks)
+   f. [Neural Networks](#neural_networks)
 
-      1. [Model Training](#nn_model_training)
-         
-      2. [Evaluation Metrics](#nn_evaluation_metrics)
-  
-   h. [Naive Bayes](#naive_bayes)
+   g. [Naive Bayes](#naive_bayes)
 
-      1. [Model Training](#nb_model_training)
-         
-      2. [Evaluation Metrics](#nb_evaluation_metrics)
-  
-   i. [Gradient Boosting](#gradient_boosting)
+   h. [Gradient Boosting](#gradient_boosting)
 
-      1. [Model Training](#gb_model_training)
-         
-      2. [Evaluation Metrics](#gb_evaluation_metrics)
-  
 6. [Conclusion & Thougts](#conclusion)
 
 
@@ -92,7 +54,7 @@ Therefore, this project aims at gaining skills on data cleaning, data analysis, 
 
 This project is about the Titanic Survival Rates of a person, given some features. The main objective is to build a well selected model that shall predict which of the Titanic passengers survived, based on their age, gender, passenger class, number of children/siblings/parents onboard, etc.
 
-The project uses two Kaggle datasets, _train_ and _test_. Train is meant to build the model, test and validate it. It includes both the features of a given person (inputs), and a binary describing if that person survived (output). The datasets are sourced from Kaggle, and are stored in the datasets folder.
+The project uses two Kaggle datasets, _data_ and _test_. Data is meant to build the model, test and validate it. It includes both the features of a given person (inputs), and a binary describing if that person survived (output). The datasets are sourced from Kaggle, and are stored in the datasets folder.
 
 The **main.ipynb** notebook file contains the source code, as well as some documentation, both theoretical and practical, on the steps used/useful to lead a data science project.
 The data analysis plots are available in the data_analysis_plots folder.
@@ -100,13 +62,13 @@ The data analysis plots are available in the data_analysis_plots folder.
 ## 2. Ressources <a name="ressources"></a>
 
 This project uses several tools/libraries that are required to doing data science. This was the perfect occasion to learn/master them. Here they are listed:
+
 - pandas
 - numpy
 - matplotlib
 - seaborn
 - scikit-learn
-
-
+- PyTorch
 
 
 
@@ -128,9 +90,9 @@ This can also provide us with some intuition on how the predictions should go - 
 
 There are two main compenents here:
 1. Data Cleaning: Here, we want to determine the proportion of empty fields/values per feature. And within each feature, we want to know which fields are missing. Fortunately _pandas_' library provides the functions to do so. Once the missing values are identified, we can choose a strategy to tackle the issue - Dropping missing rows, filling them with the mean value for that feature, etc.
-This also means labeling the data if it is not. By having a look at the _train_ dataset, this shouldn't be an issue.
+This also means labeling the data if it is not. By having a look at the _data_ dataset, this shouldn't be an issue.
 
-2.  Data Preprocessing: Here, we want to prepare the data so that it is easily usable by the model. This can mean doing some feature engineering (create new features from existing features) as well as converting String features to Integers/Floats so that the model can read them. You also want to divide the _train_ dataset into two separate datasets: one to train the model, one to validate it on a test subset. It several cases, it can be useful to shuffle the dataset before doing so, in order to properly evaluate the model performance.
+2.  Data Preprocessing: Here, we want to prepare the data so that it is easily usable by the model. This can mean doing some feature engineering (create new features from existing features) as well as converting String features to Integers/Floats so that the model can read them. Then, it is important to scale the data so that the model can work on it - some models are sensitive to the scale of the data. You also want to divide the _data_ dataset into two separate datasets: one to train the model, one to validate it on a test subset. It several cases, it can be useful to shuffle the dataset before doing so, in order to properly evaluate the model performance.
 
 ## 4. Model Selection <a name="model_selection"></a>
 
@@ -162,11 +124,28 @@ Consider the time you can allocate to the training of the model: if you need fas
 
 <ins>Nota bene:</ins> For what is following, in every case we should do some hyperparameter tuning and some cross-validation. We will do these in only a few cases. Indeed for Logistic Regression for instance, hyperparameter tuning isn't as important as it can be for Random Forest or Decision trees.
 
-## 5. Prediction models <a name="prediction_models"></a>
+## 4. Training and Testing <a name="training_and_testing"></a>
+
+The data is divided into two subsets: the training subset and the testing subset. The training subset is used to train the model, while the testing subset is used to evaluate the model performance - how well it generalizes to new data. The testing subset is meant to be unseen by the model, so that we can evaluate its performance on new data.
+
+## 5. Evaluation Metrics <a name="lr_evaluation_metrics"></a>
+
+Once the training is done, we are able to test the model on the test subset.
+
+There are several interesting metrics to evaluate the model performance:
+- **Accuracy:** The number of correct predictions made by the model divided by the total number of predictions. It is the most intuitive performance measure and it is simply a ratio of correctly predicted observation to the total observations: $Accuracy = \frac{TP + TN}{TP + TN + FP + FN}$
+- **Confusion Matrix:** it is a table with two rows and two columns (since our problem is binary) that reports the number of true positives, false negatives, false positives, and true negatives. This matrix allows us to calculate:
+- **Precision:** The number of True Positives divided by the number of True Positives and False Positives. It is the ability of the classifier not to label as positive a sample that is negative: $Precision = \frac{TP}{TP + FP}$ 
+- **Recall:** The number of True Positives divided by the number of True Positives and the number of False Negatives. It is the ability of the classifier to find all the positive samples: $Recall = \frac{TP}{TP + FN}$
+- **F1 Score:** The weighted average of Precision and Recall. It takes both false positives and false negatives into account. It is the harmonic mean of the precision and recall: $F1\ Score = \frac{2 \cdot Precision \cdot Recall}{Precision + Recall}$
+- **AUC-ROC (Area under the Receiver Operating Characteristic Curve):** The ROC curve is the plot of the true positive rate (TPR) against the false positive rate (FPR) at each threshold setting.
+
+All the figures can be found in the main file, as well as an analysis for them all.
+
+
+## 6. Prediction models <a name="prediction_models"></a>
 
 ### a. Logistic Regression <a name="logistic_regression"></a>
-
-#### i. Model Training <a name="lr_model_training"></a>
 
 **Logistic Regression Characteristics:**
 - **Output Type**: Predicts probabilities between 0 and 1
@@ -175,30 +154,8 @@ Consider the time you can allocate to the training of the model: if you need fas
 - **Model Output**: Outputs a probability, then converts it to a class (0 or 1)
 - **Range of Predictions**: Outputs values between 0 and 1 (probabilities).
 
-Based on the theory, we train the model provided by scikit-learn **sklearn.linear_model.LogisticRegression()** on the training subset of the _train_ dataset. 
-The model has been trained twice:
-- First with a single feature, to test out the model and see how things work. The results aren't expected to be very good.
-- Then on the several relevant features, to have a complete model. Of course, this is the model we choose to keep.
-
-#### ii. Evaluation Metrics <a name="lr_evaluation_metrics"></a>
-
-Once we are done, we are able to test the model on the test subset.
-The accuracy scores for the training and testing subsets can be found in the main.ipynb file. The analysis of the performance too -under/overfitting.
-
-There are several interesting metrics to evaluate the model performance:
-- **Confusion Matrix:** it is a table with two rows and two columns (since our problem is binary) that reports the number of true positives, false negatives, false positives, and true negatives. This matrix allows us to calculate:
-   - **Precision:** The number of True Positives divided by the number of True Positives and False Positives. It is the ability of the classifier not to label as positive a sample that is negative: $Precision = \frac{TP}{TP + FP}$ 
-   - **Recall:** The number of True Positives divided by the number of True Positives and the number of False Negatives. It is the ability of the classifier to find all the positive samples: $Recall = \frac{TP}{TP + FN}$
-   - **F1 Score:** The weighted average of Precision and Recall. It takes both false positives and false negatives into account. It is the harmonic mean of the precision and recall: $F1\ Score = \frac{2 \cdot Precision \cdot Recall}{Precision + Recall}$
-
-- **AUC-ROC (Area under the Receiver Operating Characteristic Curve):** The ROC curve is the plot of the true positive rate (TPR) against the false positive rate (FPR) at each threshold setting.
-
-All the figures can be found in the main file, as well as an analysis for them all.
-There are of course other useful metrics, but let's keep some fun for what comes next! ^^
 
 ### b. K-nearest neighbors <a name="knn"></a>
-
-#### i. Model Training <a name="knn_model_training"></a>
 
  **K-Nearest Neighbors (KNN) Characteristics:**
 - **Output Type**: Predicts the class of a data point based on the classes of its nearest neighbors.
@@ -213,79 +170,104 @@ There are of course other useful metrics, but let's keep some fun for what comes
 - **Sensitivity to Data**: Performance depends heavily on:
    - **Value of k**: A small k can lead to noise sensitivity, while a large k may result in oversmoothing.
 
-Based on the theory, we train the model provided by scikit-learn **sklearn.neighbors.KNeighborsClassifier()** on the training subset of the _train_ dataset. 
 
-#### ii. Evaluation Metrics <a name="knn_evaluation_metrics"></a>
+### c. Decision trees <a name="decision_trees"></a>
 
-
-
-### c. K-means <a name="kmeans"></a>
-
-#### i. Model Training <a name="km_model_training"></a>
-
-#### ii. Evaluation Metrics <a name="km_evaluation_metrics"></a>
-
-
-
-### d. Decision trees <a name="decision_trees"></a>
-
-#### i. Model Training <a name="dt_model_training"></a>
-
-#### ii. Evaluation Metrics <a name="dt_evaluation_metrics"></a>
+**Decision Trees Characteristics:**
+- **Output Type**: Outputs a class label for each data point.
+- **Use Case**: Used for classification in our case.
+- **Model Output**: Outputs a class label for each data point.
+- **Model Type**: A tree structure where each internal node represents a feature, each branch represents a decision rule, and each leaf node represents the outcome.
+- **Model Characteristics**:
+   - **Non-parametric**: Does not assume any specific form for the data distribution.
+   - **Interpretable**: Easy to understand and visualize.
+- **Model Training**:
+   - **Splitting Criteria**: The decision tree algorithm makes splits at each node based on a criterion (e.g., Gini impurity, entropy) that maximizes the information gain.
+   - **Stopping Criteria**: The algorithm stops splitting the tree based on a stopping criterion (e.g., maximum depth, minimum samples per leaf).
+- **Model Complexity**:
+   - **Overfitting**: Decision trees can easily overfit the training data, so it is important to tune the hyperparameters to avoid this issue.
+   - **Underfitting**: Decision trees can also underfit the data if they are too shallow or have too few nodes.
 
 
 
-### e. Random Forest <a name="random_forest"></a>
+### d. Random Forest <a name="random_forest"></a>
 
-#### i. Model Training <a name="rf_model_training"></a>
+**Random Forest Characteristics:**
+- **Output Type**: Outputs a class label for each data point.
+- **Use Case**: Used for classification in our case.
+- **Model Output**: Outputs a class label for each data point.
+- **Model Type**: An ensemble model that consists of multiple decision trees.
+- **Model Characteristics**:
+   - **Non-parametric**: Does not assume any specific form for the data distribution.
+   - **Interpretable**: Easy to understand and visualize.
+   - **Ensemble Model**: Combines the predictions of multiple decision trees to improve the model's performance.
+- **Model Training**:
+   - **Bootstrapping**: Random Forest usually uses bootstrapping to create multiple training datasets from the original dataset.
+   - **Feature Randomness**: Random Forest uses feature randomness to select a subset of features at each split.
+   - **Voting**: Random Forest uses majority voting to make the final prediction.
+- **Model Complexity**:
+   - **Overfitting**: Random Forest can overfit the training data if the trees are too deep or if there are too many trees in the forest.
+   - **Underfitting**: Random Forest can underfit the data if the trees are too shallow or if there are too few trees in the forest.
 
-#### ii. Evaluation Metrics <a name="rf_evaluation_metrics"></a>
+
+### e. SVM - Support-vector machines <a name="svm"></a>
+
+**Support Vector Machines (SVM) Characteristics:**
+- **Output Type**: Outputs a class label for each data point.
+- **Use Case**: Used for classification in our case.
+- **Model Output**: Outputs a class label for each data point.
+- **Model Type**: A linear model that finds the hyperplane that best separates the classes.
+- **Model Characteristics**:
+   - **Parametric**: Assumes a specific form for the data distribution.
+   - **Margin Maximization**: SVM finds the hyperplane that maximizes the margin between the classes.
+- **Model Training**:
+   - **Kernel Trick**: SVM can use the kernel trick to transform the data into a higher-dimensional space to make it linearly separable.
+   - **Regularization**: SVM uses regularization to prevent overfitting - this consists in adding a penalty term to the loss function.
+- **Model Complexity**:
+   - **Limits of the Model**: SVM can struggle with large datasets and high-dimensional data. Also, if the data presents unbalanced classes, SVM may not be the best model to use.
 
 
-
-### f. SVM - Support-vector machines <a name="svm"></a>
-
-#### i. Model Training <a name="svm_model_training"></a>
-
-#### ii. Evaluation Metrics <a name="svm_evaluation_metrics"></a>
-
-
-
-### g. Neural Networks <a name="neural_networks"></a>
+### f. Neural Networks <a name="neural_networks"></a>
 
 Okay, this may not be the most logical thing to do now -gradient boosting, naive Bayes, should probably be done first- 
 but I was working on building a Neural Network from scratch in parallel so I really wanted to do some neural network model prediction ^^
 
-#### i. Model Training <a name="nn_model_training"></a>
+**Neural Networks Characteristics:**
+- **Output Type**: Outputs a class label for each data point.
+- **Use Case**: Used for classification in our case.
+- **Model Output**: Outputs a class label for each data point.
+- **Model Type**: A network of interconnected nodes that can learn complex patterns in the data.
+- **Model Characteristics**:
+   - **Non-linear**: Can learn non-linear patterns in the data.
+   - **Deep Learning**: Neural networks with multiple hidden layers are known as deep learning models.
+- **Model Training**:
+   - **Backpropagation**: Neural networks use backpropagation to update the weights and biases during training.
+   - **Activation Functions**: Neural networks use activation functions to introduce non-linearity into the model.
+- **Model Complexity**:
+   - **Overfitting**: Neural networks can easily overfit the training data if they are too complex or if they are trained for too many epochs.
+   - **Underfitting**: Neural networks can underfit the data if they are too simple or if they are trained for too few epochs.
+- **Model Hyperparameters**:
+   - **Number of Layers**: The number of hidden layers and the number of nodes in each layer.
+   - **Activation Functions**: The activation functions used in the hidden layers.
+   - **Learning Rate**: The learning rate used during training.
+- **Neural Network Types**:
+   - **Feedforward Neural Networks**: The simplest type of neural network where the connections between nodes do not form a cycle.
+   - **Convolutional Neural Networks (CNNs)**: Neural networks that are designed to work with image data.
+   - **Recurrent Neural Networks (RNNs)**: Neural networks that are designed to work with sequential data.
+
+In our case, we will use a deep and dense neural network with several hidden layers (2/3 layers maximum) and a ReLU activation function for the hidden layers and a sigmoid activation function for the output layer. Indeed, it is not necessary to choose a very complex model for this problem, as the data is not very complex, and the number of features is not very high (in which case a convolutional neural network would be more appropriate).
+
+To do so, we will use a model from PyTorch, a deep learning library that provides a lot of tools to build and train neural networks. We will use the `torch.nn` module to define the neural network architecture and the `torch.optim` module to define the optimizer.
+
+##### Testing out the neural network built in the [Building a neural network from scratch project](#https://github.com/Gdeterline/Neural-Network-Build)
+
+Here, we will use the neural network model that we built from scratch in another project. 
+As we have already tested it on the Breast Cancer Wisconsin dataset, this should be interesting to see how well it performs on another dataset.
+
+### g. Naive Bayes <a name="naive_bayes"></a>
 
 
-
-#### ii. Evaluation Metrics <a name="nn_evaluation_metrics"></a>
-
-
-
-### h. Naive Bayes <a name="naive_bayes"></a>
-
-#### i. Model Training <a name="nb_model_training"></a>
-
-##### Testing out the neural network buit in the [Building a neural network from scratch project](#https://github.com/Gdeterline/Neural-Network-Build)
-
-
-
-
-
-#####
-
-#### ii. Evaluation Metrics <a name="nb_evaluation_metrics"></a>
-
-
-
-### i. Gradient Boosting <a name="gradient_boosting"></a>
-
-#### i. Model Training <a name="gb_model_training"></a>
-
-#### ii. Evaluation Metrics <a name="gb_evaluation_metrics"></a>
-
+### h. Gradient Boosting <a name="gradient_boosting"></a>
 
 
 ### 6. Conclusion & Thougts <a name="conclusion"></a>
