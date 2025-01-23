@@ -36,19 +36,13 @@
          
       2. [Evaluation Metrics](#knn_evaluation_metrics)
 
-   c. [K-means](#kmeans)
-
-      1. [Model Training](#km_model_training)
-         
-      2. [Evaluation Metrics](#km_evaluation_metrics)
-
-   d. [Decision trees](#decision_trees)
+   c. [Decision trees](#decision_trees)
 
       1. [Model Training](#dt_model_training)
          
       2. [Evaluation Metrics](#dt_evaluation_metrics)
 
-   e. [Random Forest](#random_forest)
+   d. [Random Forest](#random_forest)
 
       1. [Model Training](#rf_model_training)
          
@@ -56,25 +50,25 @@
   
       3. [Hyperparameters tuning and cross validation](#rf_tuning_cv)
   
-   f. [SVM - Support-vector machines](#svm)
+   e. [SVM - Support-vector machines](#svm)
          
       1. [Model Training](#svm_model_training)
          
       2. [Evaluation Metrics](#svm_evaluation_metrics)
   
-   g. [Neural Networks](#neural_networks)
+   f. [Neural Networks](#neural_networks)
 
       1. [Model Training](#nn_model_training)
          
       2. [Evaluation Metrics](#nn_evaluation_metrics)
   
-   h. [Naive Bayes](#naive_bayes)
+   g. [Naive Bayes](#naive_bayes)
 
       1. [Model Training](#nb_model_training)
          
       2. [Evaluation Metrics](#nb_evaluation_metrics)
   
-   i. [Gradient Boosting](#gradient_boosting)
+   h. [Gradient Boosting](#gradient_boosting)
 
       1. [Model Training](#gb_model_training)
          
@@ -219,15 +213,7 @@ Based on the theory, we train the model provided by scikit-learn **sklearn.neigh
 
 
 
-### c. K-means <a name="kmeans"></a>
-
-#### i. Model Training <a name="km_model_training"></a>
-
-#### ii. Evaluation Metrics <a name="km_evaluation_metrics"></a>
-
-
-
-### d. Decision trees <a name="decision_trees"></a>
+### c. Decision trees <a name="decision_trees"></a>
 
 #### i. Model Training <a name="dt_model_training"></a>
 
@@ -235,7 +221,7 @@ Based on the theory, we train the model provided by scikit-learn **sklearn.neigh
 
 
 
-### e. Random Forest <a name="random_forest"></a>
+### d. Random Forest <a name="random_forest"></a>
 
 #### i. Model Training <a name="rf_model_training"></a>
 
@@ -243,7 +229,7 @@ Based on the theory, we train the model provided by scikit-learn **sklearn.neigh
 
 
 
-### f. SVM - Support-vector machines <a name="svm"></a>
+### e. SVM - Support-vector machines <a name="svm"></a>
 
 #### i. Model Training <a name="svm_model_training"></a>
 
@@ -251,7 +237,7 @@ Based on the theory, we train the model provided by scikit-learn **sklearn.neigh
 
 
 
-### g. Neural Networks <a name="neural_networks"></a>
+### f. Neural Networks <a name="neural_networks"></a>
 
 Okay, this may not be the most logical thing to do now -gradient boosting, naive Bayes, should probably be done first- 
 but I was working on building a Neural Network from scratch in parallel so I really wanted to do some neural network model prediction ^^
@@ -264,7 +250,7 @@ but I was working on building a Neural Network from scratch in parallel so I rea
 
 
 
-### h. Naive Bayes <a name="naive_bayes"></a>
+### g. Naive Bayes <a name="naive_bayes"></a>
 
 #### i. Model Training <a name="nb_model_training"></a>
 
@@ -280,7 +266,7 @@ but I was working on building a Neural Network from scratch in parallel so I rea
 
 
 
-### i. Gradient Boosting <a name="gradient_boosting"></a>
+### h. Gradient Boosting <a name="gradient_boosting"></a>
 
 #### i. Model Training <a name="gb_model_training"></a>
 
