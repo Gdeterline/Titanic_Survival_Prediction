@@ -266,8 +266,38 @@ As we have already tested it on the Breast Cancer Wisconsin dataset, this should
 
 ### g. Naive Bayes <a name="naive_bayes"></a>
 
+**Naive Bayes Characteristics:**
+- **Output Type**: Outputs a class label for each data point.
+- **Use Case**: Used for classification in our case.
+- **Model Output**: Outputs a class label for each data point.
+- **Model Type**: A probabilistic model that uses Bayes' theorem to predict the class of a data point.
+- **Model Characteristics**:
+   - **Generative Model**: Naive Bayes is a generative model that models the joint probability distribution of the features and the class.
+   - **Conditional Independence**: Naive Bayes assumes that the features are conditionally independent given the class.
+- **Model Training**: 
+   - **Parameter Estimation**: Naive Bayes estimates the parameters of the model using maximum likelihood estimation.
+   - **Smoothing**: Naive Bayes uses smoothing to handle zero probabilities in the data.
+- **Model Complexity**: 
+   - **Simplicity**: Naive Bayes is a simple and fast model that is easy to implement and interpret.
+   - **Assumptions**: Naive Bayes makes strong assumptions about the data that may not hold in practice.
+
 
 ### h. Gradient Boosting <a name="gradient_boosting"></a>
+
+**Gradient Boosting Characteristics:**
+- **Output Type**: Outputs a class label for each data point.
+- **Use Case**: Used for classification in our case.
+- **Model Output**: Outputs a class label for each data point.
+- **Model Type**: An ensemble model that combines multiple weak learners to create a strong learner.
+- **Model Characteristics**:
+   - **Boosting**: Gradient Boosting is a boosting algorithm that builds the model in a stage-wise fashion.
+   - **Gradient Descent**: Gradient Boosting uses gradient descent to minimize the loss function.
+- **Model Training**:
+   - **Weak Learners**: Gradient Boosting uses weak learners (e.g., decision trees) as base learners.
+   - **Residuals**: Gradient Boosting fits the base learners to the residuals of the previous learners.
+- **Model Complexity**:
+   - **Overfitting**: Gradient Boosting can overfit the training data if the trees are too deep or if there are too many trees in the ensemble.
+   - **Underfitting**: Gradient Boosting can underfit the data if the trees are too shallow or if there are too few trees in the ensemble.
 
 
 ### 6. Conclusion & Thougts <a name="conclusion"></a>
