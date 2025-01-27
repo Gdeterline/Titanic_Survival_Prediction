@@ -302,3 +302,60 @@ As we have already tested it on the Breast Cancer Wisconsin dataset, this should
 
 ### 6. Conclusion & Thougts <a name="conclusion"></a>
 
+To conclude, we have gone through several prediction models that apply to the Titanic Survival Prediction problem. We have seen the characteristics of each model, as well as their use cases, and how they work. We have also seen the evaluation metrics that can be used to evaluate the performance of the models.
+
+We have also seen the importance of data preprocessing and feature engineering in building a good prediction model. The quality of the data and the features used in the model can have a significant impact on the model's performance.
+
+Finally, we have seen the importance of hyperparameter tuning and model selection in building a good prediction model. The choice of the right model and the right hyperparameters can make a big difference in the model's performance.
+
+The following table summarizes the results of the different models on the Titanic dataset:
+
+|    | Classification Model   |   Accuracy on the training dataset |   Accuracy on the testing dataset |   Precision |   Recall |   F1 Score |
+|---:|:-----------------------|-----------------------------------:|----------------------------------:|------------:|---------:|-----------:|
+|  0 | Logistic Regression    |                           0.811897 |                          0.779026 |    0.768421 | 0.663636 |   0.712195 |
+|  1 | KNN                    |                           0.700965 |                          0.632959 |    0.676471 | 0.209091 |   0.319444 |
+|  2 | Decision Trees         |                           0.847267 |                          0.790262 |    0.77     | 0.7      |   0.733333 |
+|  3 | Random Forest          |                           0.858521 |                          0.790262 |    0.846154 | 0.6      |   0.702128 |
+|  4 | SVM                    |                           0.829582 |                          0.779026 |    0.762887 | 0.672727 |   0.714976 |
+|  5 | PyTorch Neural Network |                           0.898714 |                          0.734082 |    0.69697  | 0.627273 |   0.660287 |
+|  6 | Our Neural Network     |                           0.7637   |                          0.6217   |    0.584906 | 0.281818 |   0.380368 |
+|  7 | Gaussian Naive Bayes   |                           0.826367 |                          0.752809 |    0.734043 | 0.627273 |   0.676471 |
+|  8 | Gradient Boosting      |                           0.998392 |                          0.782772 |    0.76     | 0.690909 |   0.72381  |
+
+The best models in terms of accuracy on the testing dataset are the Decision Trees and Random Forest models, with an accuracy of 0.790262. The Decision Trees model has a precision of 0.77, a recall of 0.7, and an F1 Score of 0.733333. The Random Forest model has a precision of 0.846154, a recall of 0.6, and an F1 Score of 0.702128.
+In our case, the recall is an important metric, as we want to correctly identify as many survivors as possible. The Random Forest model has the highest recall of 0.6, which means it correctly identifies 60% of the survivors in the testing dataset, while the Decision Trees model has a recall of 0.7 - highest of all models.
+The computational complexity of the model is also an important factor to consider. The Decision Trees model is relatively simple and interpretable, while the Random Forest model is more complex and may be harder to interpret. The Decision Trees model is also faster to train and test compared to the Random Forest model.
+To that extent, the Decision Trees model is the best model for this problem, as it has the highest accuracy and recall on the testing dataset, and is relatively simple and interpretable.
+
+Therefore, we chose to tune in a more extensive way the Decision Trees model, and to use it as our final model for the Titanic Survival Prediction problem.
+The results we obtained are:
+- Accuracy on the training dataset:  0.8890675241157556
+- Accuracy on the testing dataset:  0.797752808988764
+- Precision: 0.7641509433962265
+- Recall: 0.7363636363636363
+- F1 Score: 0.75
+
+Though there is some overfitting, the model performs well on the testing dataset, with an accuracy of 0.797752808988764, a precision of 0.7641509433962265, a recall of 0.7363636363636363, and an F1 Score of 0.75. The model correctly identifies 73.64% of the survivors in the testing dataset, which is a good result.
+
+In regards of the performances of the different models, let's plot the performance of the Decision Trees model:
+
+<p align="center">
+  <img src=./data_analysis_plots/Metrics_Summary_Decision_Trees_Optimised.png?raw=true alt="results", width="985"/>
+</p>
+
+The evaluation metrics for the Decision Trees model are marked as red dots.
+- The accuracy on the training dataset is within the maximum accuracy range, which is a good sign that the model learned the patterns in the data.
+- The accuracy on the testing dataset is slightly above the maximum accuracy value, which is a good sign that the model generalizes better to new data than all the other models we tested.
+- The precision is within the 3rd quartile range, which represents the top 25% of the models we tested.
+- The recall is well above the maximum recall range, which is a good sign that the model correctly identifies a high percentage of the survivors in the testing dataset - at least compared to the other models.
+- The F1 Score is above the maximum F1 score value for all other models, which is a good sign that the model has a good balance between precision and recall.
+
+In conclusion, after testing several prediction models on the Titanic dataset, we found that the Decision Trees model is the best model for this problem. It presents the best compromise between accuracy, precision, recall, and F1 Score, and generalizes well to new data. It's computational cost is also relatively low compared to other models, which makes it a good choice for this problem.
+
+#### Thoughts
+
+This project was a great opportunity to explore not only the different prediction models that apply to the Titanic Survival Prediction problem, but also the importance of data preprocessing, feature engineering, and model selection in building a good prediction model. We have seen that the quality of the data and the features used in the model can have a significant impact on the model's performance, and that the choice of the right model and the right hyperparameters can make a significant difference in the model's performance.
+Of course, there is always room for improvement. We could further tune the hyperparameters of the Decision Trees model, try other models that we haven't tested yet or even do some more feature engineering to improve the model's performance. We could also try to combine the predictions of multiple models to create an ensemble model that performs better than any individual model.
+Data science is an iterative process, and there is always something new to learn and improve. 
+
+If you have made it until here, I hope you enjoyed reading this project as much as I enjoyed working on it. Thank you for your attention!
